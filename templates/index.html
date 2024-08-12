@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTMTMBAR</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/output.css') }}"
+    />
+    <link
+      rel="icon"
+      href="{{ url_for('static', filename='images/favicon.ico') }}"
+      type="image/x-icon"
+    />
+  </head>
+  <body
+    class="bg-gradient-to-b from-sky-950 to-black h-screen flex items-center justify-center"
+  >
+    <div class="text-center">
+      <h1
+        class="text-xl font-bold bg-gradient-to-r from-slate-400 via-purple-500 to-slate-500 bg-clip-text text-transparent md:text-6xl"
+      >
+        AYO KONVERSI FILE MU
+      </h1>
+      <p class="text-sm text-slate-400 md:text-xl">
+        DRAG AND DROP ATAU MASUKAN FILENYA
+      </p>
+      <div
+        class="border border-dashed border-gray-500 mt-10 relative flex justify-center items-center h-64"
+      >
+        <input
+          type="file"
+          id="fileInput"
+          multiple
+          class="cursor-pointer absolute inset-0 opacity-0 w-full h-full z-50"
+        />
+        <div class="text-center text-white p-10">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="100"
+            height="100"
+            viewBox="0 0 512 512"
+            id="upload"
+            class="mx-auto"
+            fill="white"
+          >
+            <path
+              d="M398.1 233.2c0-1.2.2-2.4.2-3.6 0-65-51.8-117.6-115.7-117.6-46.1 0-85.7 27.4-104.3 67-8.1-4.1-17.2-6.5-26.8-6.5-29.5 0-54.1 21.9-58.8 50.5C57.3 235.2 32 269.1 32 309c0 50.2 40.1 91 89.5 91H224v-80h-48.2l80.2-83.7 80.2 83.6H288v80h110.3c45.2 0 81.7-37.5 81.7-83.4 0-45.9-36.7-83.2-81.9-83.3z"
+            ></path>
+          </svg>
+          <h4>Tarik filenya ke area untuk upload<br />atau</h4>
+          <p>Ambil file</p>
+        </div>
+      </div>
+
+      <div id="filePreview" class="mt-5 hidden relative">
+        <div
+          class="border border-gray-600 rounded-lg p-4 inline-block relative"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="40"
+            height="40"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="white"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-file mr-2 inline-block"
+          >
+            <path
+              d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+            ></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+          </svg>
+          <span id="fileName" class="text-white"></span>
+          <button
+            id="removeFile"
+            class="absolute top-0 right-0 text-gray-500 hover:text-white"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <button
+        id="convertButton"
+        class="bg-transparent my-6 hover:bg-purple-500 text-white font-semibold hover:text-white py-2 px-4 border border-purple-500 hover:border-transparent rounded"
+      >
+        Konversi
+      </button>
+
+      <a
+        id="downloadLink"
+        href="#"
+        class="hidden bg-purple-500 text-white font-semibold py-2 px-4 border border-transparent rounded"
+        download
+      >
+        Download Excel
+      </a>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/upload.js') }}"></script>
+  </body>
+</html>
