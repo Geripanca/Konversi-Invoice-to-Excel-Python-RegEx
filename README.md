@@ -2,7 +2,7 @@ Aplikasi ini terbatas pada format invoice pdf tertentu sehingga tidak berjalan d
 ---------
 
 --------
-
+**python v.3.10.12**
 ---------------------------------------
 1. npm install -D tailwindcss
 2. npx tailwindcss build static/css/input.css -o static/css/output.css
